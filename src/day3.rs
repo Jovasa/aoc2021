@@ -2,11 +2,7 @@ use std::fs::File;
 use std::io::{BufRead, BufReader};
 
 fn main() {
-    let file = match File::open("data/day3.txt") {
-        Ok(s) => s,
-        Err(_) => panic!("File doesn't exist")
-    };
-    let reader = BufReader::new(file);
+    let reader = BufReader::new(File::open("data/day3.txt").unwrap());
 
     let lines: Vec<String> = reader.lines().map(|x| x.unwrap()).collect();
 

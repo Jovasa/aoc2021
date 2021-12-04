@@ -7,11 +7,7 @@ fn main() {
 }
 
 fn first() {
-    let file = match File::open("data/day2.txt") {
-        Ok(s) => s,
-        Err(_) => panic!("File doesn't exist")
-    };
-    let reader = BufReader::new(file);
+    let reader = BufReader::new(File::open("data/day2.txt").unwrap());
 
     let mut horizontal = 0;
     let mut vertical = 0;
