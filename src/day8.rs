@@ -19,7 +19,7 @@ fn main() {
         let all = line_split.next().unwrap();
         let c = line_split.next().unwrap();
 
-        for a in all.split(" "){
+        for a in all.split(" ") {
             match a.len() {
                 2 => values[1] = a,  // one is the only character with 2 segments
                 3 => values[7] = a,
@@ -39,7 +39,7 @@ fn main() {
             .iter()
             .filter(
                 |&x|
-                    x.chars().contains(&extra_of_4[0]) && x.chars().contains(&extra_of_4[1]) )
+                    x.chars().contains(&extra_of_4[0]) && x.chars().contains(&extra_of_4[1]))
             .next()
             .unwrap();
 
@@ -76,14 +76,14 @@ fn main() {
             .iter()
             .filter(
                 |&x|
-                    x.chars().contains(&upper_of_one) && x.chars().contains(&lower_of_one) )
+                    x.chars().contains(&upper_of_one) && x.chars().contains(&lower_of_one))
             .next()
             .unwrap();
         values[2] = unfound_fives
             .iter()
             .filter(
                 |&x|
-                    x != &values[3] && x != &values[5] )
+                    x != &values[3] && x != &values[5])
             .next()
             .unwrap();
 
@@ -91,19 +91,19 @@ fn main() {
             .iter()
             .filter(
                 |&x|
-                    !x.chars().contains(&upper_of_one) && x.chars().contains(&lower_of_one) )
+                    !x.chars().contains(&upper_of_one) && x.chars().contains(&lower_of_one))
             .next()
             .unwrap();
         values[0] = unfound_sixes
             .iter()
             .filter(
                 |&x|
-                    x != &values[6] && x != &values[9] )
+                    x != &values[6] && x != &values[9])
             .next()
             .unwrap();
 
         let mut summed = 0;
-        for a in c.split(" "){
+        for a in c.split(" ") {
             summed *= 10;
             if a.len() != 5 && a.len() != 6 {
                 ones_fours_sevens_eights += 1;

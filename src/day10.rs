@@ -9,7 +9,7 @@ fn main() {
 
     for l in reader.lines() {
         let l = l.unwrap();
-        match get_leftover_valid(&mut invalid_score, l){
+        match get_leftover_valid(&mut invalid_score, l) {
             Some(stack) => {
                 let mut score = 0u64;
                 for i in stack.iter().rev() {
@@ -23,7 +23,7 @@ fn main() {
                     }
                 }
                 scores.push(score)
-            },
+            }
             None => continue
         }
     }

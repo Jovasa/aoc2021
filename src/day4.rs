@@ -5,7 +5,7 @@ use std::io::{BufRead, BufReader, Lines};
 struct BingoBoard {
     values: Vec<i32>,
     lines: Vec<Vec<i32>>,
-    score: i32
+    score: i32,
 }
 
 impl BingoBoard {
@@ -25,7 +25,7 @@ impl BingoBoard {
         }
         for i in 0..5 {
             lines.push(
-                values.to_owned().into_iter().skip(i*5).take(5).collect::<Vec<i32>>()
+                values.to_owned().into_iter().skip(i * 5).take(5).collect::<Vec<i32>>()
             );
             lines.push(
                 values.to_owned().into_iter().skip(i).step_by(5).take(5).collect()
@@ -34,7 +34,7 @@ impl BingoBoard {
         BingoBoard {
             values,
             lines,
-            score: 0
+            score: 0,
         }
     }
 
@@ -73,8 +73,8 @@ fn main() {
         );
     }
 
-    let mut valid_boards ;
-    let mut winning_draw= 0;
+    let mut valid_boards;
+    let mut winning_draw = 0;
     let mut last_valid_board = 0;
     let mut last_to_win = false;
     for i in (0..draw_order.len()).rev() {
@@ -87,7 +87,7 @@ fn main() {
                 last_valid_board = c;
                 valid_boards += 1
             } else if !last_to_win {
-                println!("Last to win: {} {} {}", draw, a.score - draw,draw * (a.score - draw) );
+                println!("Last to win: {} {} {}", draw, a.score - draw, draw * (a.score - draw));
                 last_to_win = true;
             }
             c += 1;

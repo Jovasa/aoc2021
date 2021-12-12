@@ -4,7 +4,7 @@ use std::io::{BufRead, BufReader, Lines};
 struct JellyfishGrid {
     grid: Vec<i16>,
     flashes: i32,
-    flashes_this_tick: i32
+    flashes_this_tick: i32,
 }
 
 impl JellyfishGrid {
@@ -40,7 +40,7 @@ impl JellyfishGrid {
         }
     }
     fn clear_flashed(&mut self) {
-        self.grid = self.grid.clone().iter().map(|&x| if x >= 10 {0} else {x}).collect()
+        self.grid = self.grid.clone().iter().map(|&x| if x >= 10 { 0 } else { x }).collect()
     }
     fn tick(&mut self) {
         self.flashes_this_tick = 0;
@@ -62,7 +62,7 @@ fn main() {
     let mut iteration = 101;
     loop {
         jellyfish_grid.tick();
-        if jellyfish_grid.flashes_this_tick == 100 { break }
+        if jellyfish_grid.flashes_this_tick == 100 { break; }
         iteration += 1;
     }
     println!("{}", iteration);

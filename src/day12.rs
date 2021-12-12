@@ -5,11 +5,10 @@ use std::io::{BufRead, BufReader};
 fn has_visited_small_cave_once(route: &Vec<String>) -> bool {
     let mut visited = HashSet::new();
     for i in route {
-        if i == &i.to_lowercase()  {
+        if i == &i.to_lowercase() {
             if visited.contains(i) {
                 return true;
-            }
-            else {
+            } else {
                 visited.insert(i);
             }
         }
@@ -38,14 +37,13 @@ fn main() {
         for item in work_set {
             let last = item.last().unwrap();
             for i in &edges[last] {
-                if i == "start" {continue};
-                if i != &i.to_lowercase() || !item.contains(i) || !has_visited_small_cave_once(&item){
+                if i == "start" { continue; };
+                if i != &i.to_lowercase() || !item.contains(i) || !has_visited_small_cave_once(&item) {
                     let mut a = item.clone();
                     a.push(i.to_owned());
                     if i == "end" {
                         in_end.push(a);
-                    }
-                    else {
+                    } else {
                         temp.push(a);
                     }
                 }

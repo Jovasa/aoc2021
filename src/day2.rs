@@ -13,7 +13,6 @@ fn first() {
     let mut vertical = 0;
 
     for line in reader.lines() {
-
         let line = line.unwrap();
         match line.chars().nth(0) {
             Some('f') => horizontal += line.chars().last().unwrap().to_digit(10).unwrap() as i32,
@@ -37,7 +36,6 @@ fn second() {
     let mut aim = 0;
 
     for line in reader.lines() {
-
         let line = line.unwrap();
         match line.chars().nth(0) {
             Some('f') => {

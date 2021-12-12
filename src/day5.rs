@@ -37,7 +37,7 @@ fn main() {
             }
             points.insert(temp);
             if temp.0 == cap[2] && temp.1 == cap[3] {
-                break
+                break;
             }
             i += 1;
         }
