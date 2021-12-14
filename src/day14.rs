@@ -21,10 +21,10 @@ fn main() {
     let mut value = *start_iter.next().unwrap() as u16;
     for &item in start_iter {
         value = value.wrapping_mul(256) + item as u16;
-        current_pair_count.insert(value, 1);
+        *current_pair_count.entry(value).or_insert(0) += 1;
     }
 
-    for _ in 0..10 {
+    for i in 0..40 {
         let mut temp= HashMap::new();
         for item in current_pair_count {
             let i1 = item.0 & !255 | (pairs[&item.0] as u16);
