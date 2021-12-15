@@ -71,6 +71,7 @@ fn find_lowest_risk(grid: &[u32], width: usize, height: usize) -> u32 {
     last.to_owned()
 }
 
+#[inline]
 fn check_and_mark(grid: &mut Vec<u32>, visited: &mut Vec<bool>, i: u32, index: usize, right: usize) {
     if visited[right] == false && grid[index] + grid[right] == i {
         grid[right] = i;
