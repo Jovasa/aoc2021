@@ -34,7 +34,6 @@ fn main() {
 
     let mut work_set = vec![0];
     let mut total = 0;
-    let mut in_end = Vec::new();
 
     while work_set.len() != 0 {
         let mut temp = Vec::new();
@@ -51,7 +50,6 @@ fn main() {
                     if !large_cavern && !not_visited_before { a |= VISITED_SMALL }
                     if *i == 1 {
                         total += 1;
-                        in_end.push(a);
                     } else {
                         temp.push(a);
                     }
